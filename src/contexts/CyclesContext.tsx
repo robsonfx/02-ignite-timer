@@ -19,7 +19,7 @@ interface CyclesContextType {
   activeCycle: Cycle | undefined
   activeCycleId: string | null
   amountSecondsPassed: number
-  markCurrentCycleAsFineshed: () => void
+  markCurrentCycleAsFinished: () => void
   setSecondsPassed: (second: number) => void
   createNewCycle: (data: CreateCycleData) => void
   interruptCurrentCycle: () => void
@@ -94,9 +94,9 @@ export function CyclesContextProvider({
     setAmountSecondsPassed(secondes)
   }
 
-  function markCurrentCycleAsFineshed() {
+  function markCurrentCycleAsFinished() {
     dispatch({
-      type: 'MARK_CURRENT_CYCLE_AS_FINESHED',
+      type: 'MARK_CURRENT_CYCLE_AS_FINISHED',
       payload: { activeCycleId },
     })
     // setCycles((state) =>
@@ -157,7 +157,7 @@ export function CyclesContextProvider({
         activeCycle,
         activeCycleId,
         amountSecondsPassed,
-        markCurrentCycleAsFineshed,
+        markCurrentCycleAsFinished,
         setSecondsPassed,
         createNewCycle,
         interruptCurrentCycle,
